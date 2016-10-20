@@ -10,7 +10,7 @@ function load(select) {
   select.options[0].selected = true;
   select.style.visibility = 'hidden';
 
-  word = words[i].split('');
+  word = words[i];
   create();
 }
 
@@ -35,7 +35,7 @@ function turn(letter) {
   }
   if(!correct)
     mistakes++;
-    
+
   if(mistakes >= 6)
     alert('Has perdido');
 

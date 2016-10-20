@@ -5,5 +5,17 @@ form {
 }
 
 input, span {
-  float: right;
+  /*float: right;*/
+}
+
+select {
+  margin: auto;
+  display: block;
+}
+
+input[type="submit"] {
+  float: none;
+  display: block;
+  margin: auto;
+  margin-top: 25px;
 }
