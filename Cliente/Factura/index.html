@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>Facturación</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="code.js" charset="utf-8"></script>
+</head>
+<body>
+  <form>
+    <p>Artículos:
+      <select id="list" onchange="factura()">
+        <option value="0">--Seleciona un artículo--</option>
+        <option value="0.7">Tornillos</option>
+        <option value="2.3">Martillo</option>
+        <option value="1.78">Alicates</option>
+      </select>
+    </p>
+  </form>
+  <table id="table">
+    <tr>
+      <td>Descripción</td>
+      <td>Cantidad</td>
+      <td>Precio</td>
+      <td>Subtotal</td>
+    </tr>
+  </table>
+  <p>Total =
+    <span id="total">0</span>
+  </p>
+</body>
+</html>

@@ -1,0 +1,13 @@
+.hide {
+  visibility: hidden;
+  position: fixed;
+}
+
+td {
+  cursor: pointer;
+  padding: 5px;
+}
+
+body {
+  background: cyan;
+}

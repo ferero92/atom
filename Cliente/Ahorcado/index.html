@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>Ahorcado</title>
+  <link rel="stylesheet" href="style\style.css">
+  <script src="script\code.js" charset="utf-8"></script>
+</head>
+<body>
+  <select id="category" onchange="load(this)">
+    <option value="--">--Selecciona una categoría--</option>
+    <option value="food">Comida</option>
+    <option value="countries">Países</option>
+  </select>
+  <div id="words" class="hide">
+    <p id="food">
+      PIZZA,ALBONDIGAS,TORTILLA,ENSALADA,COCIDO
+    </p>
+    <p id="countries">
+      ITALIA,FRANCIA,GRECIA,PORTUGAL,HOLANDA,SUIZA
+    </p>
+  </div>
+  <div id="game" class="hide">
+    <div id="screen"></div>
+    <table>
+      <tr>
+        <td onclick="turn(this)">Q</td>
+        <td onclick="turn(this)">W</td>
+        <td onclick="turn(this)">E</td>
+        <td onclick="turn(this)">R</td>
+        <td onclick="turn(this)">T</td>
+        <td onclick="turn(this)">Y</td>
+        <td onclick="turn(this)">U</td>
+        <td onclick="turn(this)">I</td>
+        <td onclick="turn(this)">O</td>
+        <td onclick="turn(this)">P</td>
+      </tr>
+      <tr>
+        <td onclick="turn(this)">A</td>
+        <td onclick="turn(this)">S</td>
+        <td onclick="turn(this)">D</td>
+        <td onclick="turn(this)">F</td>
+        <td onclick="turn(this)">G</td>
+        <td onclick="turn(this)">H</td>
+        <td onclick="turn(this)">J</td>
+        <td onclick="turn(this)">K</td>
+        <td onclick="turn(this)">L</td>
+        <td onclick="turn(this)">Ñ</td>
+      </tr>
+      <tr>
+        <td onclick="turn(this)">Z</td>
+        <td onclick="turn(this)">X</td>
+        <td onclick="turn(this)">C</td>
+        <td onclick="turn(this)">V</td>
+        <td onclick="turn(this)">B</td>
+        <td onclick="turn(this)">N</td>
+        <td onclick="turn(this)">M</td>
+        <td onclick="turn(this)"></td>
+        <td onclick="turn(this)"></td>
+        <td onclick="turn(this)"></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
