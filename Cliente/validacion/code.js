@@ -15,6 +15,7 @@ function ok() {
       ok = false
     }
   }
+
   if (select == null || select == 0) {
     span[2].innerHTML = 'Seleccione una provincia';
     ok = false;
@@ -23,7 +24,7 @@ function ok() {
     span[3].innerHTML = 'Acepte las condiciones';
     ok = false;
   }
-
+  
   return ok;
 }
 
