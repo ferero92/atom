@@ -4,10 +4,6 @@ form {
   margin-top: 10%;
 }
 
-input, span {
-  /*float: right;*/
-}
-
 select {
   margin: auto;
   display: block;
