@@ -1,0 +1,73 @@
+.primera{
+  background: purple;
+  Position: static;
+  Padding: 10px;
+  Text-align: center;
+  Width: 300px;
+}
+
+.segunda{
+  Position: absolute;
+  Width: 300px;
+  Padding: 10px;
+  Background-color: #006666;
+  Text-align: right;
+  Color: #FFFFEE;
+  Top: 100px;
+  Left: 322px;
+  z-index: 1;
+}
+
+.tercera{
+  Position: relative;
+  Width: 300px;
+  Padding: 10px;
+  Background-color: #003333;
+  Color: #FFFFEE;
+  Top: 10px;
+  Left: 30px;
+}
+
+.cuarta{
+  Position: static;
+  Width: 300px;
+  Padding: 10px;
+  Background-color: #096;
+  Color: #FFFFEE;
+  Top: 10px;
+  Left: 30px;
+}
+
+.quinta{
+  Position: absolute;
+  Width: 800px;
+  Height:100px;
+  Padding: 10px;
+  Background-color: #666666;
+  Text-align: right;
+  Color: #FFFFEE;
+  Top: 300px;
+  Left: 350px;
+}
+
+.sexta{
+  Position: absolute;
+  Width: 300px;
+  Padding: 10px;
+  Background-color: #111111;
+  Text-align: right;
+  Color: #FFFFEE;
+  Top: 35px;
+  Left: 5px;
+}
+
+.septima{
+  position:fixed;
+  width:300px;
+  padding:10px;
+  background-color:#0aa;
+  text-align:right;
+  color:#ffc;
+  top:50px;
+  right:50px;
+}

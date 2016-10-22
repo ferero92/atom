@@ -1,0 +1,183 @@
+@font-face {/*Esta regla nos permite cargar y usar cualquier fuente que necesitemos. Primero, debemos declarar la
+              fuente, proveer un nombre con la propiedad font-family y especificar el archivo con src*/
+  font-family: 'myfont';
+  src: url('DavidLibre-Medium.ttf');
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: myfont, verdana;
+}
+
+h1 {
+  font: bold 18px;
+}
+
+h2 {
+  font: bold 12px;
+}
+
+header, section, footer aside, nav, article, figure, figcaption, hgroup {
+  display: block;
+}
+
+body {
+  text-align: center;
+  background: -webkit-radial-gradient(rgba(124, 62, 125, 0.62) 40%, rgba(105, 208, 25, 0.63));/*Esta funcion puede ser aplicada
+                                                                                                a las propiedades background o
+                                                                                                background-image para generar un
+                                                                                                gradiente radial. La posicion de
+                                                                                                inicio es el origen y puede ser
+                                                                                                declarado en pixeles, porcentaje o
+                                                                                                como una combinacion de las palabras
+                                                                                                clave center, top, bottom, left y right*/
+  background: -moz-radial-gradient(rgba(124, 62, 125, 0.62) 40%, rgba(105, 208, 25, 0.63));
+}
+
+#agrupar {
+  width: 960px;
+  margin: 15px auto;
+  text-align: left;
+  padding: 5px 10px;
+
+}
+
+#cabecera {
+  background: -webkit-linear-gradient(rgba(105, 208, 25, 0.63), #fffbb9);/*Esta funcion puede ser aplicada a las propiedades
+                                                                          background o background-image para generar un gradiente
+                                                                          lineal. Los atributos indican el punto inicial y los
+                                                                          colores usados para crear el gradiente*/
+  background: -moz-linear-gradient(rgba(105, 208, 25, 0.63), #fffbb9);
+  border: 1px solid rgba(153, 153, 153, 0.39);/*Esta funcion es una mejora de rgb(). Toma cuatro valores: el color rojo (0-255),
+                                                el color verde (0-255), el color azul (0-255), y la opacidad (un valor entre 0 y 1)*/
+  padding: 20px;
+  text-shadow: 2px 3px rgba(255, 0, 0, 0.5);/*Esta propiedad es similar a box-shadow pero especifica para textos.
+                                              Toma cuatro parametros: el color, el
+                                              desplazamiento horizontal, el desplazamiento vertical, y el valor de difuminacion*/
+}
+
+#menu {
+  background: hsla(0, 0%, 80%, 0.79);/*Esta funcion es una mejora de hsl(). Puede tomar cuatro valores: el tono (un valor entre 0 y 360),
+                                      la saturacion (un porcentaje), la luminosidad (un porcentaje), y la opacidad (un valor entre 0 y 1).*/
+  padding: 5px 15px;
+}
+
+#menu li {
+  display: inline-block;
+  list-style: none;
+  padding: 5px;
+  font: bold 14px;
+  border: 1px solid #000;
+}
+
+#menu li:hover {
+  transition: background-color 1s, box-shadow 1s;/*Esta propiedad puede ser aplicada para crear una transición entre dos estados de
+                                                  un elemento. Recibe hasta cuatro parametros: la propiedad afectada, el tiempo que
+                                                  le tomara a la transicion desde el comienzo hasta el final, una palabra clave para
+                                                  especificar como la transicion sera realizada (ease, linear, ease-in, ease-out,
+                                                  ease-in-out) y un valor de retardo que determina el tiempo que la transicion tardara
+                                                  en comenzar*/
+  background-color: rgb(249, 190, 15);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.53);
+  cursor: crosshair;;
+}
+
+#seccion {
+  float: left;
+  width: 660px;
+  margin: 20px;
+}
+
+#seccion article {
+  box-shadow: 10px 10px rgba(255, 0, 0, 0.2);/*Esta propiedad crea sombras para la caja formada por el elemento.
+                                              Puede tomar cinco parametros: el color, el desplazamiento horizontal,
+                                              el desplazamiento vertical, el valor de difuminacion, y la palabra clave inset para
+                                              generar una sombra interna*/
+}
+
+#columna {
+  float: left;
+  width: 220px;
+  margin: 20px 0px;
+  padding: 20px;
+  background: #cccccc;
+  border-radius: 10px; /*Esta propiedad genera esquinas redondeadas para la caja formada por el elemento. Posee dos
+                        parametros diferentes que dan forma a la esquina. El primer parametro determina la curvatura horizontal y el
+                        segundo la vertical, otorgando la posibilidad de crear una elipsis*/
+}
+
+#pie {
+  clear: both;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #999999;
+}
+
+article {
+  background: #fffbcc;
+  border: 1px solid #999999;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+article footer {
+  text-align: right;
+}
+
+time {
+  color: #999999;
+}
+
+figcaption {
+  font: italic 14px verdana, sans-serif;
+}
+
+#columna blockquote {
+  text-align: center;
+  margin: 10px auto;
+}
+
+#img1 {
+  width: 468px;
+  height: 263.2px;
+  border: 5px solid #000;
+  -webkit-border-image: url(caramel.png) 10% round;/*Esta propiedad crea un borde con una imagen personalizada. Necesita que el
+                                                    borde sea declarado previamente con las propiedades border o border-with,
+                                                    y toma al menos tres parametros: la URL de la imagen, el tamaño de las piezas
+                                                    que seran tomadas de la imagen para construir el borde, y una palabra clave que
+                                                    especifica como esas piezas serán ubicadas alrededor del elemento*/
+  -moz-border-image: url(caramel.png) 10% round;
+  padding: 40px;
+  margin: 10px;
+}
+
+#img2 {
+  border: 1px solid #000;
+  outline: 1px dotted rgb(24, 32, 27);/*Esta propiedad fue mejorada con la incorporacion de otra propiedad llamada outline-offset. Ambas
+                                        propiedades combinadas generan un segundo borde alejado del borde original del elemento*/
+  outline-offset: 10px;
+  margin: 25px auto;
+}
+
+#img2:hover {
+  transition: width 2s, height 3s, transform 1s;/*Esta propiedad modifica la forma de un elemento. Utiliza cuatro funciones basicas:
+                                                  scale (escalar), rotate (rotar), skew (inclinar), y translate (trasladar o mover).
+                                                  La funcion scale recibe solo un parametro. Un valor negativo invierte el elemento,
+                                                  valores entre 0 y 1 reducen el elemento y valores mayores que 1 expanden el elemento
+                                                  (por ejemplo, transform: scale(1.5);). La funcion rotate usa solo un parametro
+                                                  expresado en grados para rotar el elemento (por ejemplo, transform: rotate(20deg);).
+                                                  La funcion skew recibe dos valores, tambien en grados, para la transformación horizontal
+                                                  y vertical (por ejemplo, transform: skew(20deg, 20deg);). La funcion translate mueve
+                                                  el objeto tantos pixeles como sean especificados por sus parametros (por ejemplo,
+                                                  transform: translate(20px);)*/
+  width: 700px;
+  height: 500px;
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+}
+
+#columna {
+  position: fixed;
+  margin-left: 65%;
+}

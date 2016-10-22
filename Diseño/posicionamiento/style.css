@@ -1,0 +1,32 @@
+* {
+  height: 100px;
+}
+
+body {
+  border: 4px solid #000000;
+  height: auto;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+.green {
+  background-color: green;
+  position: absolute;
+}
+
+.blue {
+  background-color: blue;
+}
+
+#last {
+  background-color: silver;
+}
