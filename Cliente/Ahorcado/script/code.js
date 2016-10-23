@@ -1,6 +1,9 @@
 var word;
 var mask = [];
 var mistakes = 0;
+var win = 0;
+var lose = 0;
+var keyboard = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Ñ', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '+', '+', '+']
 
 function load(select) {
 
@@ -20,12 +23,31 @@ function create() {
     mask.push('-');
   }
   document.getElementById('screen').appendChild(document.createTextNode(print(mask)));
+
+  var table = document.getElementsByTagName('table')[0];
+  var row = document.createElement('tr');
+
+  for (var i = 0; i < keyboard.length; i++) {
+    var td = document.createElement('td');
+    if(keyboard[i] != '+'){
+      td.appendChild(document.createTextNode(keyboard[i]));
+      td.setAttribute('onclick', 'turn(this)');
+    }
+    row.appendChild(td);
+    if((i+1) % 10 == 0 && i != 0){
+      table.appendChild(row);
+      row = document.createElement('tr');
+    }
+  }
+
   document.getElementById('game').style.visibility = 'visible';
 }
 
 function turn(letter) {
 
   var correct = false;
+  var color = 'green';
+  var result;
 
   for (var i = 0; i < word.length; i++) {
     if(word[i] == letter.innerHTML){
@@ -33,16 +55,18 @@ function turn(letter) {
       correct = true;
     }
   }
-  if(!correct)
+  if(!correct){
     mistakes++;
-
+    color = 'red';
+  }
   if(mistakes >= 6)
-    alert('Has perdido');
+    gameOver('Has perdido');
 
   if(print(mask) == word)
-    alert('Has acertado la palabra');
+    gameOver('Has acertado la palabra');
 
   document.getElementById('screen').innerHTML = print(mask);
+  disable(letter, color);
 }
 
 function print(string) {
@@ -53,4 +77,18 @@ function print(string) {
     print += string[i];
   }
   return print;
+}
+
+function disable(button, color) {
+
+  button.style.backgroundColor = color;
+  button.onclick = '';
+}
+
+function gameOver(string) {
+
+  document.getElementById('game').style.visibility = 'hidden';
+  document.getElementById('result').style.visibility = 'visible';
+
+
 }
