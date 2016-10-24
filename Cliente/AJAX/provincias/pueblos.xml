@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pueblos>
+  <provincia>
+    <codigo>01</codigo>
+    <municipio>Ayamonte</municipio>
+    <municipio>Cartaya</municipio>
+    <municipio>Lepe</municipio>
+  </provincia>
+  <provincia>
+    <codigo>02</codigo>
+    <municipio>Pilas</municipio>
+    <municipio>Camas</municipio>
+    <municipio>Tomares</municipio>
+  </provincia>
+  <provincia>
+    <codigo>03</codigo>
+    <municipio>Cambrils</municipio>
+    <municipio>Reus</municipio>
+    <municipio>La Pineda</municipio>
+  </provincia>
+</pueblos>
