@@ -199,3 +199,8 @@ article div {
 #logo {
   margin-left: 10%;
 }
+
+#columna img {
+  width: 100%;
+  height: 100%;
+}
