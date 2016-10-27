@@ -7,11 +7,15 @@
   <script src="script\code.js" charset="utf-8"></script>
 </head>
 <body>
-  <select id="category" onchange="load(this)">
-    <option value="--">--Selecciona una categoría--</option>
-    <option value="food">Comida</option>
-    <option value="countries">Países</option>
-  </select>
+  <div id="start">
+    <select id="category" onchange="load(this)">
+      <option value="--">--Selecciona una categoría--</option>
+      <option value="food">Comida</option>
+      <option value="countries">Países</option>
+    </select>
+    <input name="add" type="text">
+    <input type="button" value="Añadir categoria" onclick="add()">
+  </div>
   <div id="words" class="hide">
     <p id="food">ALBONDIGAS,TORTILLA,ENSALADA,COCIDO</p>
     <p id="countries">ITALIA,FRANCIA,GRECIA,PORTUGAL,HOLANDA,SUIZA</p>
@@ -19,9 +23,17 @@
   <div id="game" class="hide">
     <div id="screen"></div>
     <table></table>
+    <img id="hang" src="img/horca.png"/>
   </div>
   <div id="result" class="hide">
-
+    <input type="button" value="Jugar de nuevo" onclick="restart(this)">
+    <img src="" id="final"/>
+  </div>
+  <div id="custom" class="hide">
+    <h1>Indica alguna palabra para la nueva categoría</h1>
+    <input type="text" name="add">
+    <input type="button" value="Añadir palabra" onclick="addWord()">
+    <input type="button" value="Volver" onclick="restart(this)">
   </div>
 </body>
 </html>

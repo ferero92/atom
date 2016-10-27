@@ -11,10 +11,50 @@ function load(select) {
   var i = Math.floor(Math.random() * words.length);
 
   select.options[0].selected = true;
-  select.style.visibility = 'hidden';
+  document.getElementById('start').style.visibility = 'hidden';
 
   word = words[i];
   create();
+}
+
+function add() {
+
+  var text = document.getElementsByName('add')[0].value;
+
+  var option = document.createElement('option');
+  option.appendChild(document.createTextNode(text));
+
+  var p = document.createElement('p');
+  p.setAttribute('id', text);
+
+  document.getElementById('category').appendChild(option);
+  document.getElementById('words').appendChild(p);
+
+  document.getElementsByName('add')[0].value = "";
+
+  document.getElementById('start').style.visibility = 'hidden';
+  document.getElementById('custom').style.visibility = 'visible';
+}
+
+function addWord() {
+
+  var text = document.getElementsByName('add')[1].value;
+
+  var string = document.getElementById('words').lastChild.innerHTML;
+
+  if(string != "")
+    string += ',';
+
+  string += text.toUpperCase();
+  document.getElementById('words').lastChild.innerHTML = string;
+
+  document.getElementsByName('add')[1].value = "";
+}
+
+function restart(node) {
+
+  node.parentNode.style.visibility = 'hidden';
+  document.getElementById('start').style.visibility = 'visible';
 }
 
 function create() {
@@ -47,6 +87,7 @@ function turn(letter) {
 
   var correct = false;
   var color = 'green';
+  var img = document.getElementById('hang');
   var result;
 
   for (var i = 0; i < word.length; i++) {
@@ -58,12 +99,17 @@ function turn(letter) {
   if(!correct){
     mistakes++;
     color = 'red';
+    img.src = "img/"+mistakes+".png";
   }
-  if(mistakes >= 6)
+  if(mistakes >= 6){
     gameOver('Has perdido');
+    document.getElementById('final').src = "img/ahorcado.gif";
+  }
 
-  if(print(mask) == word)
+  if(print(mask) == word){
     gameOver('Has acertado la palabra');
+    document.getElementById('final').src = "img/win.png";
+  }
 
   document.getElementById('screen').innerHTML = print(mask);
   disable(letter, color);
