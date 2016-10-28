@@ -18,6 +18,7 @@
             "<td>".$fila["provincia"]."</td>".
             "<td>".$fila["poblacion"]."</td>".
             "<td>".$fila["telefono"]."</td>".
+            "<td onclick='borrar(".$fila["id"].")'>Borrar</td>".
           "</tr>";
   }
   echo "</table>";
