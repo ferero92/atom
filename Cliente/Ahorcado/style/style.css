@@ -1,6 +1,69 @@
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
+.show {
+  visibility: visible;
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background: rgba(252, 252, 252, 0.5);
+  padding: 15px;
+  box-shadow: 5px 5px 5px grey;
+}
+
 .hide {
   visibility: hidden;
   position: fixed;
+}
+
+.container {
+  width: 40%;
+  height: 90%;
+  float: right;
+}
+
+.container img {
+  width: 90%;
+  height: 90%;
+}
+
+.canvas {
+  width: 58%;
+  margin: auto;
+  margin-top: 25px;
+}
+
+#screen {
+  text-align: center;
+  font-size: 32px;
+}
+
+#result * {
+  margin: auto;
+}
+
+#mask {
+  width: 40%;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+}
+
+#mask * {
+  padding: 10px;
+}
+
+#mask input {
+  float: right;
+}
+
+table {
+  display: inline;
+  float: left;
+  margin-top: 10%;
 }
 
 td {
@@ -8,6 +71,13 @@ td {
   padding: 10px;
 }
 
+h1 {
+  text-align: center;
+  font-family: 'Coiny', cursive;
+  font-size: 28px;
+  color: red;
+}
+
 body {
-  background: cyan;
+  background-image: url(../img/back.png);
 }

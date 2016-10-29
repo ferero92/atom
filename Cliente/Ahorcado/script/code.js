@@ -11,7 +11,7 @@ function load(select) {
   var i = Math.floor(Math.random() * words.length);
 
   select.options[0].selected = true;
-  document.getElementById('start').style.visibility = 'hidden';
+  document.getElementById('start').className = 'hide';
 
   word = words[i];
   create();
@@ -32,11 +32,11 @@ function add() {
 
   document.getElementsByName('add')[0].value = "";
 
-  document.getElementById('start').style.visibility = 'hidden';
-  document.getElementById('custom').style.visibility = 'visible';
+  document.getElementById('start').className = 'hide';
+  document.getElementById('custom').className = 'show';
 }
 
-function addWord() {
+function addWord(button) {
 
   var text = document.getElementsByName('add')[1].value;
 
@@ -49,12 +49,8 @@ function addWord() {
   document.getElementById('words').lastChild.innerHTML = string;
 
   document.getElementsByName('add')[1].value = "";
-}
-
-function restart(node) {
-
-  node.parentNode.style.visibility = 'hidden';
-  document.getElementById('start').style.visibility = 'visible';
+  button.nextSibling.disabled = false;
+  button.disabled = true;
 }
 
 function create() {
@@ -62,7 +58,7 @@ function create() {
   for (var i = 0; i < word.length; i++) {
     mask.push('-');
   }
-  document.getElementById('screen').appendChild(document.createTextNode(print(mask)));
+  document.getElementById('screen').innerHTML = print(mask);
 
   var table = document.getElementsByTagName('table')[0];
   var row = document.createElement('tr');
@@ -80,7 +76,7 @@ function create() {
     }
   }
 
-  document.getElementById('game').style.visibility = 'visible';
+  document.getElementById('game').className = 'show';
 }
 
 function turn(letter) {
@@ -102,15 +98,15 @@ function turn(letter) {
     img.src = "img/"+mistakes+".png";
   }
   if(mistakes >= 6){
-    gameOver('Has perdido');
+    lose++;
     document.getElementById('final').src = "img/ahorcado.gif";
+    gameOver('Has perdido');
   }
-
   if(print(mask) == word){
-    gameOver('Has acertado la palabra');
+    win++
     document.getElementById('final').src = "img/win.png";
+    gameOver('Has acertado la palabra!');
   }
-
   document.getElementById('screen').innerHTML = print(mask);
   disable(letter, color);
 }
@@ -133,8 +129,40 @@ function disable(button, color) {
 
 function gameOver(string) {
 
-  document.getElementById('game').style.visibility = 'hidden';
-  document.getElementById('result').style.visibility = 'visible';
+  document.getElementById('hang').src = 'img/horca.png';
+  document.getElementById('result').getElementsByTagName('h1')[0].innerHTML = string;
 
+  var span = document.getElementById('result').getElementsByTagName('span');
+  var array = [word, win, lose];
 
+  for (var i = 0; i < array.length; i++) {
+    span[i].innerHTML = ' ' + array[i] + ' ';
+  }
+
+  document.getElementById('game').className = 'hide';
+  document.getElementById('result').className = 'show';
+}
+
+function enable(input) {
+
+  var text = input.value;
+
+  if(text != null || text != '')
+    input.nextSibling.disabled = false;
+  else {
+    input.nextSibling.disabled = true;
+    alert('ok');
+  }
+}
+
+function restart(node) {
+
+  mistakes = 0;
+  word = '';
+  mask = [];
+
+  document.getElementsByTagName('table')[0].innerHTML = '';
+
+  node.parentNode.parentNode.className = 'hide';
+  document.getElementById('start').className = 'show';
 }
