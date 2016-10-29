@@ -3,6 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <title>Super Mario Hang</title>
+  <link rel="shortcut icon" href="img/favicon.ico">
   <link rel="stylesheet" href="style\style.css">
   <link href="https://fonts.googleapis.com/css?family=Coiny|Raleway" rel="stylesheet">
   <script src="script\code.js" charset="utf-8"></script>
@@ -20,7 +21,7 @@
     </div>
   </div>
   <div id="words" class="hide">
-    <p id="food">ALBONDIGAS,TORTILLA,ENSALADA,COCIDO</p>
+    <p id="food">ALBONDIGAS,TORTILLA,ENSALADA,PIZZA</p>
     <p id="countries">ITALIA,FRANCIA,GRECIA,PORTUGAL,HOLANDA,SUIZA</p>
   </div>
   <div id="game" class="hide">
@@ -48,5 +49,10 @@
       <input type="text" name="add" onkeyup="enable(this)"><input type="button" value="Añadir palabra" onclick="addWord(this)" disabled><input type="button" value="Volver" onclick="restart(this)" disabled>
     </div>
   </div>
+  <audio id="music" src="audio/main.mp3" loop="true"></audio>
+  <audio id="coin" src="audio/coin.mp3"></audio>
+  <audio id="death" src="audio/death.mp3"></audio>
+  <audio id="up" src="audio/up.mp3"></audio>
+  <div id="sound"><img src="img/unmute.png" onclick="sound(this)"/></div>
 </body>
 </html>

@@ -4,6 +4,7 @@ var mistakes = 0;
 var win = 0;
 var lose = 0;
 var keyboard = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Ñ', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '+', '+', '+']
+var audio = false;
 
 function load(select) {
 
@@ -90,6 +91,9 @@ function turn(letter) {
     if(word[i] == letter.innerHTML){
       mask[i] = word[i];
       correct = true;
+
+      if(audio)
+        document.getElementById('coin').play();
     }
   }
   if(!correct){
@@ -100,6 +104,11 @@ function turn(letter) {
   if(mistakes >= 6){
     lose++;
     document.getElementById('final').src = "img/ahorcado.gif";
+    if(audio){
+      document.getElementById('music').pause();
+      document.getElementById('death').play();
+    }
+
     gameOver('Has perdido');
   }
   if(print(mask) == word){
@@ -163,6 +172,26 @@ function restart(node) {
 
   document.getElementsByTagName('table')[0].innerHTML = '';
 
+  if(node.value == 'Jugar de nuevo' && audio){
+    document.getElementById('up').play();
+    document.getElementById('music').play();
+  }
+
+
   node.parentNode.parentNode.className = 'hide';
   document.getElementById('start').className = 'show';
+}
+
+function sound(img) {
+
+  if(!audio){
+    img.src = "img/mute.png";
+    document.getElementById('music').play();
+    audio = true;
+  }
+  else{
+    img.src = "img/unmute.png";
+    document.getElementById('music').pause();
+    audio = false;
+  }
 }
