@@ -94,4 +94,5 @@ h1 {
 
 body {
   background-image: url(../img/backfont.png);
+  background-repeat: no-repeat;
 }

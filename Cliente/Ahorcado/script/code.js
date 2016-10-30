@@ -185,12 +185,12 @@ function restart(node) {
 function sound(img) {
 
   if(!audio){
-    img.src = "img/mute.png";
+    img.src = "img/unmute.png";
     document.getElementById('music').play();
     audio = true;
   }
   else{
-    img.src = "img/unmute.png";
+    img.src = "img/mute.png";
     document.getElementById('music').pause();
     audio = false;
   }
