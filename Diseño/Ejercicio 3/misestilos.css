@@ -3,6 +3,13 @@
   src: url('fonts/DavidLibre-Medium.ttf');
 }
 
+@media (max-width: 800px) {
+    #agrupar {
+        background-image: url(minion.gif);
+        color: red;
+    }
+}
+
 * {
   margin: 0px;
   padding: 0px;
