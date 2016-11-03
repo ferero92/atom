@@ -3,14 +3,43 @@
   src: url('fonts/DavidLibre-Medium.ttf');
 }
 
-@media (max-width: 800px) {
+@media (min-width: 801px) {
+  #agrupar {
+    background-image: url(fondo_web.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
 
+@media (max-width: 800px) {
+  #menu li{
+    font-size: 0.8rem;
+  }
+
+  .lateral {
+    width: 10%;
+  }
+
+  #seccion {
+    width: 99%;
+  }
+
+  #agrupar {
+    background-image: url(minion.gif);
+  }
+}
+
+@media (max-width: 500px) {
+  #agrupar {
+    background-image: url(jaqen.gif);
+  }
 }
 
 * {
   margin: 0px;
   padding: 0px;
   font-family: myfont, verdana;
+  font-size: 16px;
 }
 
 h1 {
@@ -54,7 +83,6 @@ header, section, footer aside, nav, article, figure, figcaption, hgroup {
   margin: 150px auto;
   text-align: left;
   background-color: rgba(202, 217, 244, 0.14);
-  background-image: url(fondo_web.jpg);
 }
 
 #cabecera {
@@ -72,15 +100,14 @@ header, section, footer aside, nav, article, figure, figcaption, hgroup {
   position: absolute;
   top: 0px;
   right: 0px;
-  width: 50%
-  font-size: 1.2rem;
-  border: 1px solid #000;
+  width: 60%;
+  text-align: right;
 }
 
 #menu li {
   display: inline-block;
   list-style: none;
-  padding: 60px 20px;
+  padding: 60px 2%;
 }
 
 #menu li:hover {
@@ -156,17 +183,7 @@ figcaption {
   margin: 10px auto;
 }
 
-#stanley {
-  width: 100%;
-  height: auto;
-}
-
-#minion {
-  width: 100%;
-  height: auto;
-}
-
-#jaqen {
+#seccion img {
   width: 100%;
   height: auto;
 }
@@ -197,7 +214,7 @@ article div {
 }
 
 #logo {
-  margin-left: 10%;
+  margin-left: 5%;
 }
 
 #columna img {
