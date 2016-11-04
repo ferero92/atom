@@ -17,8 +17,22 @@
   <form action="" method="post" onsubmit="carga()">
     <p>Nombre:<input type="text" name="name"></p>
     <p>Direccion:<input type="text" name="direccion"></p>
-    <p>Provincia:<input type="text" name="provincia"></p>
-    <p>Poblacion:<input type="text" name="poblacion"></p>
+    <p>Provincia:
+      <select name="provincia" onchange="cargaPueblos()">
+        <?php
+          $conn = mysqli_connect("localhost", "root", "", "ALUMNOS");
+          $query = 'SELECT * FROM provincias';
+          $result = mysqli_query($conn, $query);
+
+          echo "<option value='0'>--Selecciona provincia--</option>";
+
+          while ($row = mysqli_fetch_array($result)) {
+            echo "<option value='".$row['id']."'>".$row['provincia']."</option>";
+          }
+        ?>
+      </select>
+    </p>
+    <p>Poblacion:<select name="poblacion"></select></p>
     <p>Telefono:<input type="text" name="telefono"></p>
     <input type="submit" name="submit" value="Submit">
   </form>

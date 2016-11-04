@@ -43,8 +43,8 @@ function carga() {
 
   var name = document.getElementsByName('name')[0].value;
   var direccion = document.getElementsByName('direccion')[0].value;
-  var provincia = document.getElementsByName('provincia')[0].value;
-  var poblacion = document.getElementsByName('poblacion')[0].value;
+  var provincia = document.getElementsByName('provincia')[0].options[document.getElementsByName('provincia')[0].selectedIndex].innerHTML;
+  var poblacion = document.getElementsByName('poblacion')[0].options[document.getElementsByName('poblacion')[0].selectedIndex].innerHTML;
   var telefono = document.getElementsByName('telefono')[0].value;
 
   var parametros = "name="+name+"&direccion="+direccion+"&provincia="+provincia+"&poblacion="+poblacion+"&telefono="+telefono;
@@ -119,8 +119,8 @@ function modificar() {
 
   var name = document.getElementsByName('name')[0].value;
   var direccion = document.getElementsByName('direccion')[0].value;
-  var provincia = document.getElementsByName('provincia')[0].value;
-  var poblacion = document.getElementsByName('poblacion')[0].value;
+  var provincia = document.getElementsByName('provincia')[0].options[document.getElementsByName('provincia')[0].selectedIndex].innerHTML;
+  var poblacion = document.getElementsByName('poblacion')[0].options[document.getElementsByName('poblacion')[0].selectedIndex].innerHTML;
   var telefono = document.getElementsByName('telefono')[0].value;
 
   var parametros = "id="+mostrar.responseText.split('+')[0]+"&name="+name+"&direccion="+direccion+"&provincia="+provincia+"&poblacion="+poblacion+"&telefono="+telefono;
@@ -128,6 +128,7 @@ function modificar() {
   change.onreadystatechange = cargaModificar;
 
   change.open('POST', 'http://localhost/alumnosPHP/modificar.php', true);
+  alert(parametros);
 
   change.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 
@@ -138,6 +139,48 @@ function cargaModificar() {
   if(change.readyState == 4){
     if(change.status == 200){
       load();
+      alert('cargando');
     }
+  }
+}
+
+function cargaPueblos() {
+
+  if(window.XMLHttpRequest) {
+    pueblos = new XMLHttpRequest();
+  }
+  else if (window.ActiveXObject) {
+    pueblos = new ActiveXObject('Microsoft.XMLHttpRequest');
+  }
+
+  var id = document.getElementsByName('provincia')[0].value;
+
+  pueblos.onreadystatechange = cargalospueblos;
+
+  pueblos.open('GET', 'http://localhost/alumnosPHP/pueblos.php?id='+id, true)
+  pueblos.send(null);
+}
+
+function cargalospueblos() {
+  if(pueblos.readyState == 4){
+    if(pueblos.status == 200){
+      rellenapueblos();
+    }
+  }
+}
+
+function rellenapueblos() {
+
+  var array = pueblos.responseText.split('+');
+  var select = document.getElementsByName('poblacion')[0];
+
+  for (var i = 0; i < array.length; i++) {
+    var string = array[i].split(',');
+    var option = document.createElement('option');
+
+    option.setAttribute('value', string[0]);
+    option.appendChild(document.createTextNode(string[1]));
+
+    select.appendChild(option);
   }
 }
