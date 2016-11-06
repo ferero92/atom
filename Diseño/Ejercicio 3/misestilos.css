@@ -8,30 +8,167 @@
     background-image: url(fondo_web.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    width: 80%;
+    margin: 150px auto;
+  }
+
+  #cabecera {
+    width: 77%;
+    position: fixed;
+    padding: 20px;
+    top: 0px;
+  }
+
+  #logo {
+    margin-left: 5%;
+  }
+
+  #menu {
+    text-align: right;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 60%;
+  }
+
+  #menu li {
+    padding: 60px 2%;
+  }
+
+  #menu li:hover {
+    transition: background-color 1s, box-shadow 1s;
+    background-color: rgb(249, 190, 15);
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.53);
+    cursor: pointer;
+  }
+
+  #seccion {
+    width: 70%;
+    margin: 20px;
+  }
+
+  #columna {
+    width: 12%;
+    position: absolute;
+  }
+
+  #columna * {
+    display: block;
+    margin: 20px auto;
+  }
+
+  #columna img {
+    width: 100%;
+    height: auto;
   }
 }
 
 @media (max-width: 800px) {
+  #logo {
+    width: 23%;
+    height: auto;
+    margin-left: 5%;
+  }
+
+  #menu {
+    text-align: right;
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    width: 60%;
+  }
+
   #menu li{
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    padding-right: 3%;
   }
 
   .lateral {
-    width: 10%;
-  }
-
-  #seccion {
-    width: 99%;
+    visibility: hidden;
   }
 
   #agrupar {
-    background-image: url(minion.gif);
+    width: 100%;
+    margin: 16.5% auto;
+  }
+
+  #cabecera {
+    width: 100%;
+    position: fixed;
+    padding: 20px;
+    top: 0px;
+  }
+
+  #seccion {
+    width: 70%;
+    margin: 20px;
+  }
+
+  #columna {
+    width: 12%;
+    position: absolute;
+  }
+
+  #columna * {
+    display: block;
+    margin: 20px auto;
+  }
+
+  #columna img {
+    width: 100%;
+    height: auto;
   }
 }
 
 @media (max-width: 500px) {
+  #menu, #logo {
+    position: absolute;
+  }
+
+  #logo {
+    width: auto;
+    height: auto;
+    left: 20%;
+    top: 2%;
+  }
+
+  #menu {
+    text-align: left;
+    margin-top: 50px;
+    left: 0;
+    width: 100%
+  }
+
+  #menu li {
+    padding: 2%;
+  }
+
+  #cabecera {
+    position: absolute;
+    width: 91%;
+    top: 0px;
+    height: 25%;
+  }
+
   #agrupar {
-    background-image: url(jaqen.gif);
+    margin-top: 150px;
+  }
+
+  #seccion {
+    width: 93%;
+    margin-left: 5%;
+  }
+
+  #columna {
+    position: inherit;
+    width: 80%;
+  }
+
+  #columna img {
+    width: 30%;
+    height: auto;
+    margin: 1%;
+    float: left;
   }
 }
 
@@ -79,8 +216,9 @@ header, section, footer aside, nav, article, figure, figcaption, hgroup {
 }
 
 #agrupar {
-  width: 71%;
-  margin: 150px auto;
+  background-image: url(fondo_web.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   text-align: left;
   background-color: rgba(202, 217, 244, 0.14);
 }
@@ -89,37 +227,12 @@ header, section, footer aside, nav, article, figure, figcaption, hgroup {
   background: -webkit-linear-gradient(rgb(105, 208, 25), #fffbb9);
   background: -moz-linear-gradient(rgb(105, 208, 25), #fffbb9);
   border: 1px solid rgba(153, 153, 153, 0.39);
-  padding: 20px;
-  position: fixed;
-  top: 0px;
-  width: 68.1%;
   z-index: 1;
-}
-
-#menu {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 60%;
-  text-align: right;
 }
 
 #menu li {
   display: inline-block;
   list-style: none;
-  padding: 60px 2%;
-}
-
-#menu li:hover {
-  transition: background-color 1s, box-shadow 1s;
-  background-color: rgb(249, 190, 15);
-  box-shadow: 2px 2px rgba(0, 0, 0, 0.53);
-  cursor: pointer;
-}
-
-#seccion {
-  width: 70%;
-  margin: 20px;
 }
 
 #seccion article {
@@ -128,18 +241,11 @@ header, section, footer aside, nav, article, figure, figcaption, hgroup {
 }
 
 #columna {
-  width: 12%;
   margin: 30px 20px;
   padding: 20px;
   background: #cccccc;
   border-radius: 10px;
-  position: absolute;
   border: 1px solid #000;
-}
-
-#columna * {
-  display: block;
-  margin: 20px auto;
 }
 
 #pie {
@@ -211,13 +317,4 @@ article div {
 
 .right #seccion, #columna {
   float: right;
-}
-
-#logo {
-  margin-left: 5%;
-}
-
-#columna img {
-  width: 100%;
-  height: auto;
 }
