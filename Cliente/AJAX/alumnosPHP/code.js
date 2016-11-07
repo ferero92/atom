@@ -1,3 +1,5 @@
+var nombres = [];
+
 function load() {
 
   if(window.XMLHttpRequest) {
@@ -172,7 +174,12 @@ function cargalospueblos() {
 function rellenapueblos() {
 
   var array = pueblos.responseText.split('+');
-  var select = document.getElementsByName('poblacion')[0];
+  var list = document.getElementsByName('poblacion')[0];
+
+  list.parentNode.removeChild(list);
+
+  var select = document.createElement('select');
+  select.setAttribute('name', 'poblacion');
 
   for (var i = 0; i < array.length; i++) {
     var string = array[i].split(',');
@@ -183,4 +190,63 @@ function rellenapueblos() {
 
     select.appendChild(option);
   }
+  document.getElementById('poblacion').appendChild(select);
+}
+
+function alumnos(button) {
+
+  if(window.XMLHttpRequest) {
+    find = new XMLHttpRequest();
+  }
+  else if (window.ActiveXObject) {
+    find = new ActiveXObject('Microsoft.XMLHttpRequest');
+  }
+
+  button.nextSibling.style.visibility = 'visible';
+
+  find.onreadystatechange = cargaAlumnos;
+
+  find.open('GET', 'http://localhost/alumnosPHP/find.php', true);
+  find.send(null);
+}
+
+function cargaAlumnos() {
+  if(find.readyState == 4){
+    if(find.status == 200){
+      muestraAlumnos();
+    }
+  }
+}
+
+function muestraAlumnos() {
+
+  var alumnos = document.getElementById('alumnos');
+  var array = find.responseText.split('+');
+
+  for (var i = 0; i < array.length -1; i++) {
+    var datos = array[i].split(',');
+
+    var p = document.createElement('p');
+    p.setAttribute('id', datos[0]);
+    p.innerHTML = datos[1];
+
+    alumnos.appendChild(p);
+    nombres.push(datos[1]);
+  }
+}
+
+function buscar(text) {
+
+  var value = text.value;
+  var p = document.getElementById('alumnos').getElementsByTagName('p');
+
+  if(nombres.length > 0){
+    for (var i = 0; i < nombres.length; i++) {
+      if(nombres[i].search(value) == -1){
+        p[i].parentNode.removeChild(p[i]);
+        nombres.splice(i, 1);
+      }
+    }
+  }
+
 }

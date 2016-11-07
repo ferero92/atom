@@ -32,10 +32,15 @@
         ?>
       </select>
     </p>
-    <p>Poblacion:<select name="poblacion"></select></p>
+    <p id="poblacion">Poblacion:<select name="poblacion"></select></p>
     <p>Telefono:<input type="text" name="telefono"></p>
     <input type="submit" name="submit" value="Submit">
   </form>
+  <div id="find">
+    <h1>Buscador:</h1>
+    <input type="button" name="name" value="buscar" onclick="alumnos(this)"><input type="text" name="name" style="visibility:hidden" onkeyup="buscar(this)">
+    <div id="alumnos"></div>
+  </div>
   <div id="table"></div>
 </body>
 </html>

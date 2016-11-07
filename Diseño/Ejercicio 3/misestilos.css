@@ -3,6 +3,134 @@
   src: url('fonts/DavidLibre-Medium.ttf');
 }
 
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: myfont, verdana;
+  font-size: 16px;
+}
+
+body {
+  background: -webkit-linear-gradient(left, blue ,cyan, cyan 70%, blue);
+  background: -moz-linear-gradient(left, blue, cyan, blue);
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+header, section, footer aside, nav, article, figure, figcaption, hgroup {
+  display: block;
+}
+
+#agrupar {
+  background-image: url(fondo_web.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: left;
+  background-color: rgba(202, 217, 244, 0.14);
+}
+
+#cabecera {
+  background: -webkit-linear-gradient(rgb(105, 208, 25), #fffbb9);
+  background: -moz-linear-gradient(rgb(105, 208, 25), #fffbb9);
+  border: 1px solid rgba(153, 153, 153, 0.39);
+  z-index: 1;
+}
+
+#menu li {
+  display: inline-block;
+  list-style: none;
+}
+
+#seccion article {
+  box-shadow: 10px 10px rgba(255, 0, 0, 0.2);
+  border: 1px solid #000;
+}
+
+#columna {
+  margin: 30px 20px;
+  padding: 20px;
+  background: #cccccc;
+  border-radius: 10px;
+  border: 1px solid #000;
+}
+
+#pie {
+  clear: both;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #999999;
+  background: #999999;
+}
+
+article {
+  background: #fffbcc;
+  border: 1px solid #999999;
+  padding: 20px;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+article:nth-child(odd) {
+  background: #fffbcc;
+}
+
+article:nth-child(even) {
+  background: rgb(217, 199, 223);
+}
+
+article footer {
+  text-align: right;
+}
+
+time {
+  color: #999999;
+}
+
+figcaption {
+  font: italic 14px verdana, sans-serif;
+}
+
+#columna blockquote {
+  text-align: center;
+  margin: 10px auto;
+}
+
+#seccion img {
+  width: 100%;
+  height: auto;
+}
+
+article div figure {
+  float: left;
+  padding: 10px;
+
+}
+
+article div {
+  display: block;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+}
+
+.left #seccion {
+  float: left;
+}
+
+.left #columna {
+  margin-left: 52%;
+}
+
+.right #seccion, #columna {
+  float: right;
+}
+
 @media (min-width: 801px) {
   #agrupar {
     background-image: url(fondo_web.jpg);
@@ -29,6 +157,7 @@
     top: 0px;
     right: 0px;
     width: 60%;
+    margin-right: 5%;
   }
 
   #menu li {
@@ -170,151 +299,10 @@
     margin: 1%;
     float: left;
   }
-}
 
-* {
-  margin: 0px;
-  padding: 0px;
-  font-family: myfont, verdana;
-  font-size: 16px;
-}
-
-h1 {
-  font-size: 24px;
-}
-
-h2 {
-  font-size: 16px;
-}
-
-header, section, footer aside, nav, article, figure, figcaption, hgroup {
-  display: block;
-}
-
-.lateral {
-  float: left;
-  position: fixed;
-  top: 0px;
-  width: 50%;
-  height: 100%;
-  z-index: -1;
-}
-
-#left {
-  left: 0px;
-  background: linear-gradient(left, blue 1%, cyan);
-  background: -webkit-linear-gradient(left, blue 1%, cyan);
-  background: -moz-linear-gradient(left, blue 1%, cyan);
-}
-
-#right {
-  float: right;
-  right: 0px;
-  background: linear-gradient(right, blue 1%, cyan);
-  background: -webkit-linear-gradient(right, blue 1%, cyan);
-  background: -moz-linear-gradient(right, blue 1%, cyan);
-}
-
-#agrupar {
-  background-image: url(fondo_web.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  text-align: left;
-  background-color: rgba(202, 217, 244, 0.14);
-}
-
-#cabecera {
-  background: -webkit-linear-gradient(rgb(105, 208, 25), #fffbb9);
-  background: -moz-linear-gradient(rgb(105, 208, 25), #fffbb9);
-  border: 1px solid rgba(153, 153, 153, 0.39);
-  z-index: 1;
-}
-
-#menu li {
-  display: inline-block;
-  list-style: none;
-}
-
-#seccion article {
-  box-shadow: 10px 10px rgba(255, 0, 0, 0.2);
-  border: 1px solid #000;
-}
-
-#columna {
-  margin: 30px 20px;
-  padding: 20px;
-  background: #cccccc;
-  border-radius: 10px;
-  border: 1px solid #000;
-}
-
-#pie {
-  clear: both;
-  text-align: center;
-  padding: 20px;
-  border-top: 2px solid #999999;
-  background: #999999;
-}
-
-article {
-  background: #fffbcc;
-  border: 1px solid #999999;
-  padding: 20px;
-  margin-bottom: 15px;
-  text-align: justify;
-}
-
-article:nth-child(odd) {
-  background: #fffbcc;
-}
-
-article:nth-child(even) {
-  background: rgb(217, 199, 223);
-}
-
-article footer {
-  text-align: right;
-}
-
-time {
-  color: #999999;
-}
-
-figcaption {
-  font: italic 14px verdana, sans-serif;
-}
-
-#columna blockquote {
-  text-align: center;
-  margin: 10px auto;
-}
-
-#seccion img {
-  width: 100%;
-  height: auto;
-}
-
-article div figure {
-  float: left;
-  padding: 10px;
-
-}
-
-article div {
-  display: block;
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  column-count: 2;
-}
-
-.left #seccion {
-  float: left;
-}
-
-.left #columna {
-  margin-left: 52%;
-}
-
-.right #seccion, #columna {
-  float: right;
+  article div {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
 }
