@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="jquery-3.1.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#mayoria_edad").click(function (event) {
+        if($("#mayoria_edad").attr("checked")){
+          $("#formulariomayores").css("display", "block");
+        }else{
+          $("#formulariomayores").css("display", "none");
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <form method="post">
+    <p>Nombre de usuario<input type="text" name="name" value=""></p>
+    <p>Mayor de edad?<input type="checkbox" name="mayor_edad" value="1" id="mayoria_edad"></p>
+    <div id="formulariomayores" style="display: none;">
+      <p>Confirma mayoría de edad<input type="button" name="mayores_edad" value="Soy mayor"></p>
+    </div>
+  </form>
+</body>
+</html>

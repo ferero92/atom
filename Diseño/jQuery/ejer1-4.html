@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    .classcss{
+      background-color: rgb(231, 163, 47);
+      font-weight: bold;
+    }
+  </style>
+  <script src="jquery-3.1.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("a").mouseover(function (event) {
+        $("#capa").addClass("classcss")
+      });
+      $("a").mouseout(function (event) {
+        $("#capa").removeClass("classcss")
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="capa">Esta capa debería cambiar de color al pasar el ratón sobre el enlace de abajo</div>
+  <a href="#">Enlace</a>
+</body>
+</html>
