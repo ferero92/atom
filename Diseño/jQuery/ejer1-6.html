@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="jquery-3.1.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#ocultar").click(function (event) {
+        event.preventDefault();
+        $("#capaefectos").hide("slow");
+      });
+      $("#mostrar").click(function (event) {
+        event.preventDefault();
+        $("#capaefectos").show(3000);
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="capaefectos" style="background-color: #cc7700; color: #fff; padding: 10px">
+    Esto es una capa que nos servirá para hacer efectos!
+    <br>
+    <br>
+    Pongo este texto simplemente de prueba
+  </div>
+  <p>
+    <a href="#" id="ocultar">Ocultar la capa</a>
+    <a href="#" id="mostrar">Mostrar la capa</a>
+  </p>
+</body>
+</html>
