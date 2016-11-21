@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="jquery-3.1.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("div").each(function (i) {
+        var elemento = $(this);
+        if (elemento.html() == "white")
+          return true;
+        if(elemento.html() == "nada")
+          return false;
+        elemento.css("color", elemento.html());
+      })
+    })
+  </script>
+</head>
+<body>
+  <div>red</div>
+  <div>blue</div>
+  <div>white</div>
+  <div>red</div>
+  <div>green</div>
+  <div>orange</div>
+  <div>red</div>
+  <div>nada</div>
+  <div>red</div>
+  <div>blue</div>
+</body>
+</html>

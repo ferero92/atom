@@ -3,7 +3,7 @@
 
   $vote = $_GET["vote"];
 
-  $query = "UPDATE voto SET value = value +1 WHERE name = '" . $vote . "'";
+ $query = "UPDATE voto SET value = value +1 WHERE name = '" . $vote . "'";
   mysqli_query($conn, $query);
 
   $votes = "SELECT value FROM voto";

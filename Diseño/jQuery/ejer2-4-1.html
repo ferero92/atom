@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="jquery-3.1.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("p").each(function (i) {
+        if(i % 2 == 0){
+          $(this).css("background-color", "#eee");
+        }else{
+          $(this).css("background-color", "#ccc");
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <p>Primer parrafo</p>
+  <p>Otro parrafo</p>
+  <p>Tercer parrafo</p>
+  <p>Uno más</p>
+  <p>y acabo...</p>
+</body>
+</html>

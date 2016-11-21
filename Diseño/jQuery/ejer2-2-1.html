@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="jquery-3.1.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var elem1 = $("#elem1");
+      elem1.css("background-color", "#ff9999");
+
+      var divs = $("div");
+      divs.css("font-size", "32pt");
+
+      var inputs = $("input", document.forms[0]);
+      inputs.css("color", "red");
+
+      var parrafos_div1 = $("p", "#div1");
+      parrafos_div1.hide(5000);
+    });
+  </script>
+</head>
+<body>
+  <div id="elem1">Este elemento se llama elem1</div>
+  <div id="elem2">Este otro elemento se llama elem2</div>
+  <form>
+    <input type="button" name="name" value="Enviar">
+    <input type="text" name="name" value="inserte nombre">
+  </form>
+  <div id="div1">
+    <p>Hola</p>
+    <p>a</p>
+    <p>todos</p>
+  </div>
+</body>
+</html>
