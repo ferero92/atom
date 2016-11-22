@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="jquery-3.1.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#guardar').click(function (event) {
+        var valor = $("#valor").prop("value");
+        $("#division").data("midato", valor);
+        $("#division").html('He guardado en este elemento (id="division") un dato' +
+        'llamado "midato" con el valor "' + valor + '"');
+      });
+      $('#leer').click(function (event) {
+        valor = $('#division').data("midato");
+        $('#division').html('En este elemento (id="division") leo un dato llamado' +
+        '"midato" con el valor "' + valor + '"');
+      });
+      $('#eliminar').click(function (event) {
+        $('#division').removeData("midato");
+        $('#division').html('Acabo de eliminar del elemento (id="division") el ' +
+        'dato llamado "midato"');
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="division">
+    En esta division (elemento id="division") voy a guardar datos con la función data
+    y luego los voy a leer
+  </div>
+  <form name="formu1">
+    Escribe un valor a guardar, leer o eliminar:
+    <input id="valor" type="text" name="valor">
+    <br>
+    <input type="button" value="guardar dato" id="guardar">
+    <input type="button" value="leer dato" id="leer">
+    <input type="button" value="eliminar dato" id="eliminar">
+  </form>
+</body>
+</html>
