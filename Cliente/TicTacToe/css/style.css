@@ -1,0 +1,16 @@
+img {
+  display: block;
+  height: auto;
+  margin: auto;
+  width: 70%;
+}
+
+table {
+  border-collapse: collapse;
+  margin: auto;
+  width: 50%;
+}
+
+td {
+  border: 1px solid #000;
+}
