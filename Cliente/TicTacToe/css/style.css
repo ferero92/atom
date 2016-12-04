@@ -1,8 +1,6 @@
 img {
   display: block;
-  height: auto;
   margin: auto;
-  width: 70%;
 }
 
 table {
@@ -13,4 +11,7 @@ table {
 
 td {
   border: 1px solid #000;
+  height: 108px;
+  width: 33%;
+
 }
