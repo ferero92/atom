@@ -2,13 +2,12 @@ var user;
 var column = ['l', 'c', 'r'];
 var oldcell;
 var check = false;
-var formContent = document.getElementsByClassName('container')[1].innerHTML;
 
 function start() {
-alert(formContent);
+
   user = 0;
 
-  var container = document.getElementsByClassName('container')[1];
+  var container = document.getElementsByClassName('container')[0];
   container.innerHTML = '';
 
   var table = document.createElement('table');
@@ -74,7 +73,7 @@ function win(cell) {
 }
 
 function turn() {
-
+alert(user);
   if(!check){
     var type;
 
