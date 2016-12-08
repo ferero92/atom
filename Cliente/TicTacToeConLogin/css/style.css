@@ -3,12 +3,14 @@ img {
   margin: auto;
 }
 
-.alert {
-  margin-top: 3%;
+table {
+  height: 400px;
+  margin: auto;
+  width: 70%;
 }
 
-.container button {
-  margin-left: 3%;
+td {
+  border: 2px solid #000;
 }
 
 .o {
@@ -23,14 +25,4 @@ img {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-}
-
-#game {
-  height: 400px;
-  margin: auto;
-  width: 70%;
-}
-
-#game td {
-  border: 2px solid #000;
 }
