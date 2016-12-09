@@ -5,6 +5,6 @@
   $result = mysqli_query($conn, $query);
 
   while($row = mysqli_fetch_array($result)){
-    echo $row['name'].','.$row['password'];
+    echo $row['name'].','.$row['password'].','.$row["gender"];
   }
 ?>

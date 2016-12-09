@@ -23,7 +23,7 @@ function init() {
   var singupbtn = document.createElement('button');
   singupbtn.className = 'btn btn-success';
   singupbtn.setAttribute('data-toggle', 'modal');
-  singupbtn.setAttribute('data-target', '#singup');
+  singupbtn.setAttribute('data-target', '#signup');
   singupbtn.innerHTML = 'Regístrate';
 
   var alertdiv = document.createElement('div');
@@ -73,7 +73,7 @@ function controlEmail(ajax) {
     document.getElementsByTagName('span')[0].style.visibility = 'visible';
   }
   else{
-    name = ajax.responseText.split(',')[0];
+    name = ajax.responseText.split(',')[0] + ',' + ajax.responseText.split(',')[2];
     password = ajax.responseText.split(',')[1];
 
     document.getElementsByTagName('span')[0].style.visibility = 'hidden';
@@ -125,10 +125,46 @@ function oneplayermode() {
 
 function start() {
 
+  document.getElementById('music').play();
+
   user = 0;
 
   var container = document.getElementsByClassName('container')[0];
   container.innerHTML = '';
+
+  var row = document.createElement('div');
+  row.className = 'row';
+
+  var well1 = document.createElement('div');
+  well1.className = 'col-sm-4';
+
+  var img1 = document.createElement('img');
+  img1.setAttribute('src', 'img/player1'+player1.split(',')[1]+'.png');
+  well1.appendChild(img1);
+
+  var label1 = document.createElement('label');
+  label1.innerHTML = player1.split(',')[0];
+  well1.appendChild(label1);
+
+  var well2 = document.createElement('div');
+  well2.className = 'col-sm-4';
+
+  var img2 = document.createElement('img');
+
+  if(!machine)
+    img2.setAttribute('src', 'img/player2'+player2.split(',')[1]+'.png');
+  else
+    img2.setAttribute('src', 'img/machine.png');
+
+  well2.appendChild(img2);
+
+  var label2 = document.createElement('label');
+  if(machine)
+    label2.innerHTML = 'Dr. Eggman';
+  else
+    label2.innerHTML = player2.split(',')[0];
+
+  well2.appendChild(label2);
 
   var table = document.createElement('table');
   table.setAttribute('id', 'game');
@@ -145,6 +181,10 @@ function start() {
     }
     table.appendChild(tr);
   }
+  row.appendChild(well1);
+  row.appendChild(well2);
+
+  container.appendChild(row);
   container.appendChild(table);
 }
 
@@ -206,12 +246,15 @@ function score() {
     score1 = -5;
     score2 = 10;
   }
-  var url = 'php/score.php?player1='+player1+'&player2='+player2+'&score1='+score1+'&score2='+score2;
+  var url = 'php/score.php?player1='+player1.split(',')[0]+'&player2='+player2.split(',')[0]+'&score1='+score1+'&score2='+score2;
 
   load(url, consult);
 }
 
 function consult(ajax) {
+
+  document.getElementById('music').pause();
+  document.getElementById('clear').play();
 
   var container = document.getElementsByClassName('container')[0];
   container.innerHTML = ajax.responseText;
@@ -312,7 +355,6 @@ function bad() {
     }
     var i = Math.floor(Math.random() * cells.length);
 
-    alert(cells[i].id+', '+user);
     move(cells[i]);
   }
 }
