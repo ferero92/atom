@@ -1,0 +1,21 @@
+.class1 {
+  height: auto;
+  width: 20%;
+}
+
+.class2 {
+  height: auto;
+  width: 50%;
+}
+
+.tip {
+  background-color: #ffcc99;
+  padding: 10px;
+  display: none;
+  position: absolute;
+}
+
+#elemento1 {
+  background-color: #ccccff;
+  padding: 5px;
+}
