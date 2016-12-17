@@ -1,0 +1,71 @@
+body {
+  background-image: url(../img/wallpaper.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: cyan;
+}
+
+img {
+  display: block;
+  margin: auto;
+}
+
+table {
+  background: white;
+}
+
+.alert {
+  margin-top: 3%;
+}
+
+.container button {
+  margin-left: 3%;
+}
+
+.o {
+  background-image: url("../img/o.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.page-header {
+  color: cyan;
+}
+
+.row {
+  color: cyan;
+  margin-bottom: 2%;
+}
+
+.row div {
+  margin-right: 10%;
+}
+
+.row div * {
+  float: left;
+}
+
+.row img {
+  height: auto;
+  width: 30%;
+  margin-right: 2%;
+}
+
+.x {
+  background-image: url("../img/x.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#game {
+  height: 350px;
+  margin: auto;
+  width: 60%;
+}
+
+#game td {
+  border: 2px solid #000;
+}

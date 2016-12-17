@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style/flexslider.css" media="screen" title="no title">
+  <link rel="stylesheet" href="../style/style.css" media="screen" title="no title">
+  <script src="../script/jquery-1.7.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+		$(window).load(function() {
+			$('.flexslider').flexslider();
+		});
+	</script>
+</head>
+<body>
+  <header>
+    <h1>
+      <a href="index.html">
+        <img class="fade" src="../img/logo.png" alt="logo">
+      </a>
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="#">Imágenes</a></li>
+        <li><a href="video.html">Videos</a></li>
+        <li><a href="#">Música</a></li>
+        <li><a href="#">Contenidos</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="contenido">
+    <section id="principal">
+      <article id="video">
+        <video src="../media/gru3.mp4" poster="../img/poster.jpg" width="100%" loop controls></video>
+      </article>
+    </section>
+  </section>
+  <footer>
+    Aprendiendo Responsive Web Design <a href="http://twitter/DinosaurLost" rel="author" target="_blank">
+      @DinosaurLost
+    </a>
+  </footer>
+</body>
+</html>

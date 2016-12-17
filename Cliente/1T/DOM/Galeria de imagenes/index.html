@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>Galería</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="code.js" charset="utf-8"></script>
+</head>
+<body onload="mini()">
+  <select id="list" onchange="select()">
+    <option value="--">--Selecciona una imagen para visualizar--</option>
+    <option value="rio.jpg">Río</option>
+    <option value="arbol.jpg">Árbol</option>
+    <option value="desierto.jpg">Desierto</option>
+    <option value="polar.jpg">Polar</option>
+  </select>
+  <div id="container">
+    <input type="button" name="prev" value="<">
+    <div id="frame">
+      <img src="rio.jpg" value="1">
+    </div>
+    <input type="button" name="next" value=">" onclick="next()">
+  </div>
+  <div id="mini"></div>
+</body>
+</html>

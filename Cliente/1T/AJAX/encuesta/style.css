@@ -1,0 +1,19 @@
+div.stadist {
+  border: 1px solid #000;
+  margin: auto;
+  visibility: hidden;
+  width: 50%;
+}
+
+div.stadist div {
+  background: green;
+  float: right;
+  height: 12px;
+  margin-right: 20%;
+  width: 40%;
+}
+
+form {
+  margin: 5% auto;
+  width: 50%;
+}

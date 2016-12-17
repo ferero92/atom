@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>Super Mario Hang</title>
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="style\style.css">
+  <link href="https://fonts.googleapis.com/css?family=Coiny|Raleway" rel="stylesheet">
+  <script src="script\code.js" charset="utf-8"></script>
+</head>
+<body>
+  <img src="img/logo.png" id="logo">
+  <div id="start" class="show">
+    <h1>Elige una categoría para jugar</h1>
+    <div class="canvas">
+      <select id="category" onchange="load(this)">
+        <option value="--">--Selecciona--</option>
+        <option value="food">Comida</option>
+        <option value="countries">Países</option>
+      </select>
+      <input name="add" type="text" onkeyup="enable(this)"><input type="button" value="Añadir categoria" onclick="add()" disabled>
+    </div>
+  </div>
+  <div id="words" class="hide">
+    <p id="food">ALBONDIGAS,TORTILLA,ENSALADA,PIZZA</p>
+    <p id="countries">ITALIA,FRANCIA,GRECIA,PORTUGAL,HOLANDA,SUIZA</p>
+  </div>
+  <div id="game" class="hide">
+    <div id="screen"></div>
+    <table></table>
+    <div class="container">
+      <img id="hang" src="img/horca.png"/>
+    </div>
+  </div>
+  <div id="result" class="hide">
+    <h1></h1>
+    <div id="mask">
+      <p>La palabra era:<span></span></p>
+      <p>Has ganado<span></span>veces</p>
+      <p>Has perdido<span></span>veces</p>
+      <input type="button" value="Jugar de nuevo" onclick="restart(this)">
+    </div>
+    <div class="container">
+      <img src="" id="final"/>
+    </div>
+  </div>
+  <div id="custom" class="hide">
+    <h1>Indica alguna palabra para la nueva categoría</h1>
+    <div class="canvas">
+      <input type="text" name="add" onkeyup="enable(this)"><input type="button" value="Añadir palabra" onclick="addWord(this)" disabled><input type="button" value="Volver" onclick="restart(this)" disabled>
+    </div>
+  </div>
+  <audio id="music" src="audio/main.mp3" loop="true"></audio>
+  <audio id="coin" src="audio/coin.mp3"></audio>
+  <audio id="death" src="audio/death.mp3"></audio>
+  <audio id="up" src="audio/up.mp3"></audio>
+  <div id="sound"><img src="img/mute.png" onclick="sound(this)"/></div>
+</body>
+</html>

@@ -1,4 +1,0 @@
-Nombre,Ciudad,Teléfono,Nota
-+Pepe,Huelva,5548,5
-+Manolo,Sevilla,7849,8
-+Juana,Albacete,1547,9
