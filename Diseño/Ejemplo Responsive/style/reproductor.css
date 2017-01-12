@@ -1,0 +1,47 @@
+#reproductor{
+  width: 95%;
+  margin: auto;
+  padding: 2%;
+  background: #999999;
+  border: 1px solid #666666;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+#reproductor nav{
+  border: 1px solid grey;
+  width: 95%;
+  border-radius: 5px;
+  padding: 1%;
+}
+#botones{
+  float: left;
+  width: 100px;
+  height: 20px;
+}
+#barra{
+  position: relative;
+  clear: both;
+  width: 95%;
+  height: 16px;
+  padding: 2px;
+  border: 1px solid #CCCCCC;
+  background: #EEEEEE;
+  border-radius: 3px;
+  margin: auto;
+}
+#progreso{
+  position: absolute;
+  width: 0px;
+  height: 16px;
+  background: rgba(0,0,150,.2);
+}
+
+#medio {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin: auto;
+}

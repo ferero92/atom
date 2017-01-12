@@ -5,14 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="style/flexslider.css" media="screen" title="no title">
   <link rel="stylesheet" href="../style/style.css" media="screen" title="no title">
+  <link rel="stylesheet" href="../style/reproductor.css" media="screen" title="no title">
   <script src="../script/jquery-1.7.1.min.js" charset="utf-8"></script>
-  <script type="text/javascript">
-		$(window).load(function() {
-			$('.flexslider').flexslider();
-		});
-	</script>
+  <script src="../script/reproductor.js" charset="utf-8"></script>
 </head>
 <body>
   <header>
@@ -33,8 +29,19 @@
   </header>
   <section id="contenido">
     <section id="principal">
-      <article id="video">
-        <video src="../media/gru3.mp4" poster="../img/poster.jpg" width="100%" loop controls></video>
+      <article id="galeria-inicio">
+        <article id="reproductor">
+          <video id="medio" src="../media/gru3.mp4" poster="../img/poster.jpg"></video>
+          <nav>
+            <div id="botones">
+              <button id="reproducir" type="button">Reproducir</button>
+            </div>
+            <div id="barra">
+              <div id="progreso"></div>
+            </div>
+            <div style="clear: both"></div>
+          </nav>
+        </article>
       </article>
     </section>
   </section>
